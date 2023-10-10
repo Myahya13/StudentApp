@@ -1,0 +1,11 @@
+require: rubocop-rails
+
+AllCops:
+  Exclude:
+    - "config/**/*"
+    - "db/migrate/**/*"
+  DisabledByDefault: true
+
+# Disable Style/Documentation cop
+Style/Documentation:
+  Enabled: false

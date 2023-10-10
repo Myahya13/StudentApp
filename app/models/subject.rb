@@ -1,6 +1,8 @@
-class Subject < ApplicationRecord
-    validates  :title ,presence: true ,length: {maximum: 50}
-    validates   :description , presence: true ,length: {maximum: 255}
+# frozen_string_literal: true
 
-    has_many :exams
+class Subject < ApplicationRecord
+  validates :title, presence: true, length: { maximum: 50 }
+  validates :description, presence: true, length: { maximum: 255 }
+
+  has_many :exams
 end
