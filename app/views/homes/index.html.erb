@@ -1,0 +1,19 @@
+<h1>Welcome to my Student App</h1>
+<% if current_user%>
+<h4>Hello<%= current_user.name %></h4>
+<p>You role is [<%= current_user.role %>]
+<p>You have successfully created your Account .You can now use the application according to your selected role</p>
+<%= link_to "Edit" , edit_user_registration_path,class: "btn btn-secondary" %>
+<%= button_to "Delete My Account", user_registration_path, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
+   <% if current_user.profile_picture.attached?%>
+   <%= image_tag(current_user.profile_picture , style: "display:inline-block; widht:100px; height:100px; border-radius:40%") %>
+   <% else %>
+   <h5>You do not have any profile picture</h5>
+   <% end %>
+<%= button_to "Sign out" , destroy_user_session_path, method: :delete,class: "btn btn-warning" %>
+<% else %>
+<p>You are not signed in Currently</p>
+<%= link_to "Sign up", new_user_registration_path ,class: "btn btn-secondary"%>
+<%= link_to "Sign in" , new_user_session_path,class: "btn btn-primary" %>
+<% end %>
+
