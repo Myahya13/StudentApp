@@ -20,7 +20,7 @@ class SubjectsController < ApplicationController
     def show
         @subject = Subject.find_by(id: params[:id])
         if @subject.nil?
-            flash[:error] = "Error Occured"
+            flash[:error] = "Subject Not Found"
         end
     end
 
