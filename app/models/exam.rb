@@ -5,7 +5,7 @@ class Exam < ApplicationRecord
   validates  :description, presence: true
   validates  :marks, presence: true, numericality: { only_integer: true }
   validates  :show_exam, presence: true
-  validates  :status, inclusion: { in: [true, false] }
+  
 
   has_many :questions
   belongs_to  :user
