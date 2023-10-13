@@ -18,15 +18,16 @@ class SubjectsController < ApplicationController
     end
 
     def show
-        @subject = Subject.find(params[:id])
+        @subject = Subject.find_by(id: params[:id])
+        if @subject.nil?
+            flash[:error] = "Error Occured"
+        end
     end
 
 
     private
 
     def subject_params
-        params.require(:subject).permit(:title , :description)
+        params.require(:subject).permit(:title, :description)
     end
-    
-
 end

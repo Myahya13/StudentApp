@@ -1,14 +1,27 @@
 <h1>All Subjects</h1>
 
-<ul>
-  <% @subjects.each do |subject| %>
-    <li>
-      <h2><%= subject.title %></h2>
-      <p><%= subject.description %></p>
-      <p>ID: <%= subject.id %></p>
+ <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>ID</th>
       <% if current_user.role == "teacher" %>
-      <%= link_to 'Create New Exam', new_exam_path(subject_id: subject.id),class: "btn btn-primary" %>
+        <th>Actions</th>
       <% end %>
-    </li>
-  <% end %>
-</ul>
+    </tr>
+  </thead>
+  <tbody>
+    <% @subjects.each do |subject| %>
+      <tr>
+        <td><h2><%= subject.title %></h2></td>
+        <td><p><%= subject.description %></p></td>
+        <td><p>ID: <%= subject.id %></p></td>
+        <% if current_user.teacher? %>
+          <td><%= link_to 'Create New Exam', new_exam_path(subject_id: subject.id), class: "btn btn-primary" %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
