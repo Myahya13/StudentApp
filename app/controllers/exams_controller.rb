@@ -6,8 +6,7 @@ class ExamsController < ApplicationController
     end
   
     def new
-      @exam = Exam.new
-      Exam.new(subject_id: params[:subject_id])
+        @exam = Exam.new(subject_id: params[:subject_id])
     end
   
     def create
@@ -22,12 +21,6 @@ class ExamsController < ApplicationController
         render :new
       end
     end 
-  
-    def show
-    end
-  
-    def edit
-    end
   
     private
   
