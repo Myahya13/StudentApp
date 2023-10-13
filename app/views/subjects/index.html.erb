@@ -1,0 +1,14 @@
+<h1>All Subjects</h1>
+
+<ul>
+  <% @subjects.each do |subject| %>
+    <li>
+      <h2><%= subject.title %></h2>
+      <p><%= subject.description %></p>
+      <p>ID: <%= subject.id %></p>
+      <% if current_user.role == "teacher" %>
+      <%= link_to 'Create New Exam', new_exam_path(subject_id: subject.id),class: "btn btn-primary" %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

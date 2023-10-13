@@ -1,0 +1,13 @@
+<h1>Please Create Subject before creating Exam!</h1>
+<%= form_with model: @subject, local: true do |form| %>
+<h5><%= form.label :title %></h5>
+<%= form.text_field :title , class: "form-control"%><br/>
+<p><%= form.label :description %></p>
+<%= form.text_area :description%><br/>
+  </div>
+  <div class="actions">
+    <%= form.submit 'Create Subject' %>
+  </div>
+<% end %>
+
+

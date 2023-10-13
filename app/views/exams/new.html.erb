@@ -1,0 +1,19 @@
+<h2>Please Create Exam Details!</h2>
+<%= form_with(model: @exam) do |form| %>
+  <h5><%= form.label :title %></h5>
+  <%= form.text_field :title, class: "form-control" %><br/>
+
+  <p><%= form.label :description %></p>
+  <%= form.text_area :description, class: "form-control" %><br/>
+
+  <h5><%= form.label :marks %></h5>
+  <%= form.number_field :marks, class: "form-control" %><br/>
+
+  <h5><%= form.label :show_exam %></h5>
+  <%= form.date_field :show_exam, class: "form-control" %><br/>
+
+  
+  <%= form.hidden_field :subject_id, value: params[:subject_id] %>
+
+  <%= form.submit "Create Exam", class: "btn btn-primary" %>
+<% end %>
