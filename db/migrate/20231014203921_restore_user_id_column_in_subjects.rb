@@ -1,0 +1,8 @@
+class RestoreUserIdColumnInSubjects < ActiveRecord::Migration[6.1]
+  def change
+
+    remove_column :subjects, :user_id, :integer
+
+    add_column :subjects, :user_id, :integer
+  end
+end

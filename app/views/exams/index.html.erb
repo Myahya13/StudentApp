@@ -1,1 +1,22 @@
-<h1>Exam Details!</h1>
+<table class = "table">
+  <thead class = "thead-dark">
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Show Exam</th>
+      <th>Marks</th>
+      <th>ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @exams.each do |exam| %>
+      <tr>
+        <td><%= exam.title %></td>
+        <td><%= exam.description %></td>
+        <td><%= exam.show_exam %></td>
+        <td><%= exam.marks %></td>
+        <td><%= exam.id %>
+        </tr>
+    <% end %>
+  </tbody>
+</table>

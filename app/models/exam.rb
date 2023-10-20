@@ -7,7 +7,7 @@ class Exam < ApplicationRecord
   validates  :show_exam, presence: true
   
 
-  has_many :questions
+  has_many :questions, dependent: :destroy
   belongs_to  :user
   belongs_to  :subject
   has_many    :student_exams

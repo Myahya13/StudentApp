@@ -17,6 +17,7 @@
    <% else %>
    <h5>You do not have any profile picture</h5>
    <% end %>
+   <%= link_to "Show All Exams", exams_path, class: "btn btn-secondary" %>
 <%= button_to "Sign out" , destroy_user_session_path, method: :delete,class: "btn btn-warning" %>
 <% else %>
 <p>You are not signed in Currently</p>

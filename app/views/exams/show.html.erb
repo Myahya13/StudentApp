@@ -1,1 +1,13 @@
-<h1>Exam Details!</h1>
+<div class="container rounded p-4" style="background-color: #e5e5e5; border-radius: 20px; margin-top: 10px;">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1>Exam Details!</h1>
+      <h3><%= @exam.title %></h3><br/>
+      <h4><%= @exam.description %></h4><br/>
+      <h5><%= @exam.show_exam %></h5><br/>
+      <h2><%= @exam.marks %></h2><br/>
+      <%= link_to "Show All Exams", exams_path, class: "btn btn-secondary" %>
+      <%= link_to 'Select Question Type', question_type_exam_questions_path(@exam), class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

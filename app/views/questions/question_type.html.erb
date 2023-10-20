@@ -1,0 +1,22 @@
+<div class="container rounded p-4" style="background-color: #e5e5e5; border-radius: 20px; margin-top: 10px;">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <%= form_with(url: question_type_exam_questions_path(@exam, question_type: @selected_question_type), method: :get) do |form| %>
+        <div class="field">
+          <%= form.label :question_type, 'Select Question Type:' %>
+          <%= form.select :question_type, Question.question_types.keys.map { |key| [key.humanize, key] }, { include_blank: 'Select a question type' }, { class: 'form-control', id: 'question-type-select' } %>
+        </div>
+        <%= form.submit 'Submit', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
