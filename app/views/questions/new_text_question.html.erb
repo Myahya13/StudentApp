@@ -1,0 +1,24 @@
+<div class="container rounded p-4" style="background-color: #e5e5e5; border-radius: 20px; margin-top: 10px;">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <%= form_with(model: @question, url: exam_questions_path(exam_id: @exam_id), method: :post, local: true) do |f| %>
+        <%= f.hidden_field :exam_id, value: @exam_id %>
+        <%= f.hidden_field :question_type, value: 'text' %>
+
+        <div id="question-text-field">
+          <%= f.label :question_text %>
+          <%= f.text_field :question_text, class: "form-control" %>
+        </div>
+
+        <%= f.fields_for :answers do |a| %>
+          <%= a.label :content, "Answer" %>
+          <%= a.text_field :content, class: "form-control" %>
+        <% end %>
+
+        <%= f.submit "Create Question", class: "btn btn-secondary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

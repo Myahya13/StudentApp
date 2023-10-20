@@ -7,11 +7,6 @@
   </div>
 
   <div class="field">
-    <%= f.label :role %><br/>
-<%= f.select :role, User.roles.keys.map { |role| [role.humanize, role] }, { include_blank: 'Select a role' }, { class: 'form-control' } %>
-  </div>
-
-  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control" %>
   </div>

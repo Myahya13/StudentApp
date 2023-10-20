@@ -1,0 +1,23 @@
+<div class="container rounded p-4" style="background-color: #e5e5e5; border-radius: 20px; margin-top: 10px;">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1><%= @question.question_text %></h1>
+
+      <ol>
+        <% @question.answers.each do |answer| %>
+          <li>
+            <%= answer.content %>
+            <% if answer.correct %>
+              (Correct)
+            <% end %>
+          </li>
+        <% end %>
+      </ol>
+
+      <%= link_to "Create More Questions", question_type_exam_questions_path, class: "btn btn-secondary" %>
+      <%= link_to 'Show All Questions', exam_questions_path, class: "btn btn-success" %>
+    </div>
+  </div>
+</div>
+
+

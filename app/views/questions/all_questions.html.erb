@@ -1,0 +1,33 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Question</th>
+       <th>Exam ID</th>
+      <th>Answers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><h3><%= question.question_text %></h3></td>
+        <td><%= question.exam_id %></td>
+        <td>
+          <% if question.answers.any? %>
+            <ul>
+              <h3><% question.answers.each do |answer| %></h3>
+                <li>
+                  <%= answer.content %>
+                </li>
+              <% end %>
+            </ul>
+          <% else %>
+            <p>No answers found for this question.</p>
+          <% end %>
+        </td>
+        <td>
+         <%= button_to 'Destroy',exam_question_path(@exam, question), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
